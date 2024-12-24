@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback Form</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bg-style {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .header-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .feedback-container {
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feedback-form label {
+            font-weight: bold;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .radio-options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .feedback-form button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: center;
+            width: 100%;
+        }
+
+        .feedback-form button:hover {
+            background-color: #0056b3;
+        }
+
+        #feedbackMessage {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-style">
+    <header class="header-section">
+        <h1>User Feedback Form</h1>
+    </header>
+
+    <section class="feedback-container">
+        <h2>Your Feedback Matters</h2>
+        <form id="feedbackForm" class="feedback-form">
+            <label for="fullName">Name:</label>
+            <input type="text" id="fullName" name="fullName" required maxlength="50">
+
+            <label for="userEmail">Email:</label>
+            <input type="email" id="userEmail" name="userEmail" required>
+
+            <label>Rate our service (1-5):</label>
+            <div class="radio-options">
+                <label><input type="radio" name="userRating" value="1"> 1</label>
+                <label><input type="radio" name="userRating" value="2"> 2</label>
+                <label><input type="radio" name="userRating" value="3"> 3</label>
+                <label><input type="radio" name="userRating" value="4"> 4</label>
+                <label><input type="radio" name="userRating" value="5"> 5</label>
+            </div>
+            <p id="feedbackMessage"></p>
+
+            <label for="additionalComments">Additional Comments:</label>
+            <textarea id="additionalComments" name="additionalComments" rows="4" maxlength="500"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+            <button type="button" id="clearForm">Reset Form</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 LaunchDarkly. All rights reserved.</p>
+    </footer>
+
+    <script src="feedback.js"></script>
+</body>
+</html>
